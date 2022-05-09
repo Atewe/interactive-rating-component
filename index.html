@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Rating state start -->
+    <div class="container" id="con">
+        <div class="star"><img src="images\icon-star.svg" alt="star-icon"></div>
+        <h3>How did we do?</h3>
+        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+        <div class="ratings">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button id="rat-btn">4</button>
+            <button>5</button>
+        </div>
+        <input type="submit" id="sub-btn"></input>
+    </div>
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+    <div class="container2" id="con2">
+        <div class="image"><img src="images\illustration-thank-you.svg" alt="receipt-icon"></div>
+        <p>You selected 4 out of 5</p>
+        <h3>Thank you!</h3>
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+    </div>
+    <!-- Thank you state end -->
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Atewe</a>.
+    </div>
+</body>
+
+<script>
+    var btn = document.getElementById('rat-btn');
+    var submit = document.getElementById('sub-btn');
+    var box1 = document.getElementById('con');
+    var box2 = document.getElementById('con2');
+
+
+    btn.addEventListener('click', () => {
+        btn.style.background = 'rgb(149, 158, 172)';
+        btn.style.color = 'white';
+
+        submit.addEventListener('click', () => {
+            box1.style.display = 'none';
+            box2.style.display = 'flex';
+        });
+    });
+</script>
+
+</html>
